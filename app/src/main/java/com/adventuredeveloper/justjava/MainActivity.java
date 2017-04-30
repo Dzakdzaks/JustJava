@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Method untuk menambahkan quantity
     public void increment(View view) {
         if (quantity == 100) {
             Toast.makeText(this, "You cannot have more than 100 coffes", Toast.LENGTH_SHORT).show();
@@ -30,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
         displayQuantity(quantity);
     }
 
+    //method untuk menampilkan quantity
     private void displayQuantity(int numberOfCoffes) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + numberOfCoffes);
     }
 
+    //method untuk mengurangi quantity
     public void decrement(View view) {
         if (quantity == 1) {
             Toast.makeText(this, "You cannot have less than 1 coffe", Toast.LENGTH_SHORT).show();
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    //method untuk menampilkan orderan
     public void submitOrder(View view) {
         EditText nameField = (EditText) findViewById(R.id.name_field);
         if (isEmpty(nameField)) {
@@ -93,11 +97,14 @@ public class MainActivity extends AppCompatActivity {
 //            startActivity(intent);
 //        }
     }
+
+    //method untuk menampilkan nama pemesan
     private void displayMessage(String message) {
         TextView orderSUmmaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         orderSUmmaryTextView.setText(message);
     }
 
+    //method untuk menghitung harga jika ada tambahan topping
     private int calculatePrice(boolean addWhispedCream, boolean addChocolate, boolean addChacha, boolean addStrawberryJam, boolean addMilk) {
         int basePrice = 5;
 
@@ -122,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
         return basePrice * quantity;
     }
 
+
+    //Method untuk menampilkan hasil semuanya...
     public String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate, boolean addChacha, boolean addStrawberryJam, boolean addMilk) {
         String priceMessage = "Name : " + name;
 //        priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
