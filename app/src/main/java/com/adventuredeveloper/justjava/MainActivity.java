@@ -1,8 +1,6 @@
 package com.adventuredeveloper.justjava;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
@@ -18,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     //Method untuk menambahkan quantity
@@ -133,30 +130,30 @@ public class MainActivity extends AppCompatActivity {
     //Method untuk menampilkan hasil semuanya...
     public String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate, boolean addChacha, boolean addStrawberryJam, boolean addMilk) {
         String priceMessage = "Name : " + name;
-//        priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
-//        priceMessage += "\nAdd Chocolate? " + addChocolate;
-//        priceMessage += "\nAdd Chacha? " + addChacha;
-//        priceMessage += "\nAdd Strawberry Jam? " + addStrawberryJam;
-//        priceMessage += "\nAdd Milk? " + addMilk;
-//        priceMessage += "\nQuantity : " + quantity;
-//        priceMessage += "\nTotal : $" + price;
-//        priceMessage += "\nThank You!";
+        priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
+        priceMessage += "\nAdd Chocolate? " + addChocolate;
+        priceMessage += "\nAdd Chacha? " + addChacha;
+        priceMessage += "\nAdd Strawberry Jam? " + addStrawberryJam;
+        priceMessage += "\nAdd Milk? " + addMilk;
+        priceMessage += "\nQuantity : " + quantity;
+        priceMessage += "\nTotal : $ " + price;
+        priceMessage += "\nThanks You For Your Order!";
 
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("This is Your Order Summary");
-        alert.setMessage("Name : " + name + "\nAdd Whipped Cream? " + addWhippedCream + "\nAdd Chocolate? " + addChocolate + "\nAdd Chacha? " + addChacha + "\nAdd Strawberry Jam? " + addStrawberryJam + "\nAdd Milk? " + addMilk + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank You For Your Order!");
-        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "Your Order is been Deliveried", Toast.LENGTH_SHORT).show();
-            }
-        });
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        }).show();
+//        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+//        alert.setTitle("This is Your Order Summary");
+//        alert.setMessage("Name : " + name + "\nAdd Whipped Cream? " + addWhippedCream + "\nAdd Chocolate? " + addChocolate + "\nAdd Chacha? " + addChacha + "\nAdd Strawberry Jam? " + addStrawberryJam + "\nAdd Milk? " + addMilk + "\nQuantity : " + quantity + "\nTotal : $" + price + "\nThank You For Your Order!");
+//        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                Toast.makeText(MainActivity.this, "Your Order is been Deliveried", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//
+//            }
+//        }).show();
         //Toast.makeText(this, "You has been order " + quantity + " Cup of coffee and you must paid $"+ price + ". Thank you for your order!!! See you in next order!!!", Toast.LENGTH_LONG).show();
 
         return priceMessage;

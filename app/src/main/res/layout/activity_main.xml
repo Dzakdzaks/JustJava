@@ -140,13 +140,6 @@
                 android:onClick="submitOrder"
                 android:text="Order" />
 
-            <!--<Button-->
-                <!--android:id="@+id/btnShare"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="20dp"-->
-                <!--android:onClick="submit"-->
-                <!--android:text="Share Your Order" />-->
         </LinearLayout>
 
     </LinearLayout>
